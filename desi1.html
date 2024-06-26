@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Proposal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('background-image-url') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .modal-content h2 {
+            margin: 0;
+        }
+        .modal-content p {
+            margin-top: 10px;
+        }
+        .modal-content button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question">Puchie, will you marry me? 💖💍</div>
+        <div class="buttons">
+            <button class="button" onclick="showModal('yes')">Yes</button>
+            <button class="button" onclick="showModal('no')">No</button>
+        </div>
+    </div>
+
+    <div id="modalYes" class="modal">
+        <div class="modal-content">
+            <h2>Awesome! I can't wait to spend my life with you! 🎉💍</h2>
+            <button onclick="closeModal('yes')">Close</button>
+        </div>
+    </div>
+
+    <div id="modalNo" class="modal">
+        <div class="modal-content">
+            <h2>That's heartbreaking 💔</h2>
+            <p>I might have to file a police complaint against you! ⚠️🚨</p>
+            <button onclick="closeModal('no')">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal(answer) {
+            document.getElementById('modal' + answer.charAt(0).toUpperCase() + answer.slice(1)).style.display = 'flex';
+        }
+
+        function closeModal(answer) {
+            document.getElementById('modal' + answer.charAt(0).toUpperCase() + answer.slice(1)).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
